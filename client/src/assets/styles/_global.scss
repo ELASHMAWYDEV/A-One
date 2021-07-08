@@ -1,11 +1,12 @@
 //Colors
 $white: #ffffff;
 $yellow-primary: #FFC619;
-
+$gray: #95A5A6;
+$red: #F14646;
 //Fonts
 @import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap');
 
 //Media Queries
 @mixin media($breakpoint) {
@@ -129,17 +130,17 @@ input::-webkit-inner-spin-button {
 	align-items: center;
 }
 /******************************/
-/*
+
 @mixin dashLine {
 	margin: 50px auto;
-	background-image: linear-gradient(to right, $gray 55%, rgba(255, 255, 255, 0) 50%);
+	background-color: $gray;
 	background-position: bottom;
 	background-size: 8% 2px;
 	background-repeat: repeat-x;
 	width: 100%;
 	height: 2px;
 }
-*/
+
 /******************************/
 //floating box animation
 /*@mixin box-animate {
