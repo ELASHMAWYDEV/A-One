@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
+/*
+--------------------------
+---To use media queries---
+--------------------------
+
+@include media(desktop-lg) {
+  
+}
+@include media(desktop-sm) {
+
+}
+@include media(tablet-lg) {
+
+}
+@include media(tablet-sm) {
+
+}
+@include media(phone-lg) {
+
+}
+@include media(phone-sm) {
+
+}
+
+*/
+/*****************************************/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/********************************************************/
+/******************************/
+/*
+@mixin dashLine {
+	margin: 50px auto;
+	background-image: linear-gradient(to right, $gray 55%, rgba(255, 255, 255, 0) 50%);
+	background-position: bottom;
+	background-size: 8% 2px;
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 2px;
+}
+*/
+/******************************/
+/*@mixin box-animate {
+	animation: box 0.3s ease 1;
+}
+@keyframes box {
+	0% {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(unset);
+	}
+}
+/******************************/
+/*@mixin table-container {
+	box-shadow: 0px 3px 6px $light-grey;
+	overflow: hidden;
+	overflow-x: auto;
+	margin: 40px 20px;
+	border-radius: 15px;
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		thead {
+			th {
+				border-bottom: 1px solid $grey;
+				padding: 5px;
+				font-size: 16px;
+				font-weight: 500;
+				color: $grey;
+				white-space: nowrap;
+				text-align: right;
+				padding-left: 50px;
+				&:nth-child(1) {
+					padding-right: 40px;
+				}
+			}
+		}
+		tbody {
+			tr {
+				.edit-icon {
+					background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0%
+						no-repeat padding-box;
+					position: absolute;
+					left: 40px;
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					color: $white;
+					cursor: pointer;
+					&:hover {
+						background: linear-gradient(79deg, $pink 0%, $light-orange 0%, $yellow 100%) 0% 0% no-repeat;
+					}
+					&:active {
+						transition: none;
+						transform: scale(0.95);
+					}
+				}
+				td {
+					position: relative;
+					padding: 12px 0px;
+					padding-left: 25px;
+					&:nth-child(1) {
+						padding-right: 40px;
+					}
+				}
+				input {
+					background-color: transparent;
+					outline: none;
+					border: none;
+					text-align: center;
+					font-size: 15px;
+					color: $dark-green;
+					font-weight: 500;
+					display: inline-block;
+					width: max-content;
+					padding: 5px 10px;
+					border-radius: 8px;
+					&:focus,
+					&.active {
+						background-color: rgba($dark-green, 1);
+						color: $white;
+					}
+					&[type='number'] {
+						padding-left: 0;
+						max-width: 80px;
+						text-align: right;
+					}
+				}
+				&:nth-child(even) {
+					background-color: rgba($mid-grey, 0.7);
+					input {
+						color: $white;
+					}
+					td {
+						color: $white;
+					}
+				}
+			}
+			.delete-btn-container {
+				background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0% no-repeat
+					padding-box;
+				box-shadow: 0px 3px 6px #00000029;
+				border-radius: 8px;
+				opacity: 1;
+				display: flex;
+				justify-content: space-around;
+				padding: 5px 20px;
+				margin-left: 40px;
+				cursor: pointer;
+				width: max-content;
+				outline: none;
+				border: none;
+				transition: 0.3s ease;
+				&:hover {
+					background: linear-gradient(79deg, $pink 0%, $light-orange 0%, $yellow 100%) 0% 0% no-repeat;
+				}
+				&:active {
+					transition: none;
+					transform: scale(0.95);
+				}
+				p {
+					color: $white;
+					font-size: 14px;
+				}
+				svg {
+					font-size: 20px;
+					color: white;
+					margin-right: 8px;
+				}
+			}
+		}
+		tfoot {
+			background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0% no-repeat
+				padding-box;
+			tr {
+				td {
+					padding: 12px;
+					padding-right: 10px;
+					color: $white;
+					font-size: 20px;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
+*/
+.login-container .container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 0 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.login-container .container .form-container {
+  margin-right: 40px;
+}
+
+.login-container .container .form-container form {
+  margin-top: 100px;
+}
+
+.login-container .container .form-container form div {
+  width: 80%;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.login-container .container .form-container form div input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 12px 20px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+}
+
+.login-container .container .form-container form div a {
+  background-color: #FFC619;
+  padding: 8px 20px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.login-container .container .background-container {
+  background: url(../../assets/images/several-scissors.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  position: relative;
+}
+
+.login-container .container .background-container .layer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-color: rgba(255, 198, 25, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.login-container .container .background-container .layer h2 {
+  color: #ffffff;
+  font-size: 50px;
+  width: 50%;
+  padding: 20px 25px;
+  font-family: 'Otomanopee One', sans-serif;
+}
+/*# sourceMappingURL=style.css.map */
