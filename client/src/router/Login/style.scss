@@ -28,8 +28,12 @@
               padding: 8px 20px;
               text-align: center;
               color: $white;
+              font-weight: bold;
               border-radius: 10px;
               text-decoration: none;
+              &:hover{
+                background-color: rgb(233, 164, 16);
+              }
           }
         }
       }
