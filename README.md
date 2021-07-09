@@ -1,5 +1,6 @@
 # Routes
-- `/api/auth/login`
+* Endpoint: `/api/auth/login`
+* Method: `POST`
 * Cookies: `access_token` `user_date`
 ```javascript
  Request
