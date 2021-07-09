@@ -1,69 +1,93 @@
 @import "../../assets/styles/global";
 
 .services-container {
-  .title {
-    text-align: center;
-    h3 {
-      font-size: 25px;
-      font-weight: bold;
-      font-family: "Changa", sans-serif;
-    }
-  }
-  .services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    div {
-      background-color: $gray;
-      padding: 10px 30px;
-      border-radius: 15px;
-      margin: 25px;
-      color: $white;
-      cursor: pointer;
-      text-align: center;
-      font-weight: bold;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-      div {
-        background-color: transparent;
-        margin: 0;
-        box-shadow: none;
-      }
-      &:hover {
-        transition: all 0.3s ease;
-    }
-      &:active {
-        transition: none;
-        transform: scale(0.95);
-      }
-    }
-    .active {
-      background-color: $yellow-primary;
-    }
-  }
-  .add-button {
-    width: 70%;
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 50px;
-    button {
-      background-color: $yellow-primary;
-      padding: 4px 50px;
-      border-radius: 10px;
-      outline: none;
-      border: none;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-      color: $white;
-      font-weight: bold;
-      cursor: pointer;
-      &:hover {
-        background-color: rgba(233, 164, 16, 0.938);
-        transition: all 0.3s ease;
-      }
-      &:active {
-        transition: none;
-        transform: scale(0.95);
-      }
-    }
-  }
+	.title {
+		text-align: center;
+		h3 {
+			font-size: 25px;
+			font-weight: bold;
+			font-family: "Changa", sans-serif;
+		}
+	}
+	.services {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		div {
+			background-color: $gray;
+			padding: 10px 30px;
+			border-radius: 15px;
+			margin: 25px;
+			color: $white;
+			cursor: pointer;
+			text-align: center;
+			font-weight: bold;
+			box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+			div {
+				background-color: transparent;
+				margin: 0;
+				box-shadow: none;
+			}
+			&:hover {
+				transition: all 0.3s ease;
+			}
+			&:active {
+				transition: none;
+				transform: scale(0.95);
+			}
+		}
+		.active {
+			background-color: $yellow-primary;
+		}
+	}
+	.add-button {
+		width: 70%;
+		margin: auto;
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 50px;
+		button {
+			background-color: $yellow-primary;
+			padding: 4px 50px;
+			border-radius: 10px;
+			outline: none;
+			border: none;
+			box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+			color: $white;
+			font-weight: bold;
+			cursor: pointer;
+			&:hover {
+				background-color: rgba(233, 164, 16, 0.938);
+				transition: all 0.3s ease;
+			}
+			&:active {
+				transition: none;
+				transform: scale(0.95);
+			}
+		}
+	}
+
+	@include media(desktop-lg) {
+	}
+	@include media(desktop-md) {
+	}
+	@include media(desktop-sm) {
+	}
+	@include media(tablet-lg) {
+	}
+	@include media(tablet-md) {
+	}
+	@include media(tablet-sm) {
+	}
+	@include media(phone-lg) {
+		.services {
+			div {
+				margin: 15px;
+			}
+		}
+	}
+	@include media(phone-md) {
+	}
+	@include media(phone-sm) {
+	}
 }

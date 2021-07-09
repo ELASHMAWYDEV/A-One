@@ -1,36 +1,60 @@
 @import "../../assets/styles/global";
 
 .home-container {
+	padding: 30px;
+	.dash-line {
+		@include dashLine;
+		width: 70%;
+	}
+	.add-button {
+		width: 70%;
+		margin: auto;
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 50px;
+		button {
+			background-color: $yellow-primary;
+			padding: 4px 50px;
+			border-radius: 10px;
+			outline: none;
+			border: none;
+			box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+			color: $white;
+			font-weight: bold;
+			cursor: pointer;
+			&:hover {
+				background-color: rgb(233, 164, 16);
 
-  .dash-line {
-    @include dashLine;
-    width: 70%;
-  }
-  .add-button {
-    width: 70%;
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 50px;
-    button {
-      background-color: $yellow-primary;
-      padding: 4px 50px;
-      border-radius: 10px;
-      outline: none;
-      border: none;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-      color: $white;
-      font-weight: bold;
-      cursor: pointer;
-      &:hover {
-        background-color: rgb(233, 164, 16);
+				transition: all 0.3s ease;
+			}
+			&:active {
+				transition: none;
+				transform: scale(0.95);
+			}
+		}
+	}
 
-        transition: all 0.3s ease;
-      }
-      &:active {
-        transition: none;
-        transform: scale(0.95);
-      }
-    }
-  }
+	@include media(desktop-lg) {
+	}
+	@include media(desktop-md) {
+	}
+	@include media(desktop-sm) {
+	}
+	@include media(tablet-lg) {
+	}
+	@include media(tablet-md) {
+	}
+	@include media(tablet-sm) {
+		.add-button {
+			width: auto;
+			margin-top: 40px;
+			justify-content: center;
+		}
+	}
+	@include media(phone-lg) {
+	}
+	@include media(phone-md) {
+	}
+	@include media(phone-sm) {
+	}
 }
