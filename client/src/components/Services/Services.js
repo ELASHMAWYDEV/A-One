@@ -22,18 +22,18 @@ const Services = ({services, onChange}) => {
           services.map((service, index) => (
             <div
               className={`service-button ${
-                servicesActiveIds.includes(service.id) ? "active" : ""
+                servicesActiveIds.includes(service._id) ? "active" : ""
               }`}
               onClick={() => {
-                servicesActiveIds.includes(service.id)
+                servicesActiveIds.includes(service._id)
                   ? setServicesActiveIds(
-                      servicesActiveIds.filter((s) => service.id !== s)
+                      servicesActiveIds.filter((s) => service._id !== s)
                     )
-                  : setServicesActiveIds([...servicesActiveIds, service.id]);
+                  : setServicesActiveIds([...servicesActiveIds, service._id]);
               }}
             >
               <div>{service.name}</div>
-              {service.price}
+              {service.price} ج.م
             </div>
           ))}
       </div>

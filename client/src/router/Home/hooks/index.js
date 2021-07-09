@@ -13,10 +13,9 @@ const useHome = () => {
       console.log(data.data);
       if (!data.status) {
         createNotification(data.message);
-        return data;
+        return {};
       }
-      createNotification(data.message, "success");
-      return data;
+      return data.data;
     } catch (e) {
       createNotification(e.message);
       return { status: false };
@@ -25,7 +24,44 @@ const useHome = () => {
     }
   };
 
-  return { getData };
+  const create = async (servicesIds, employeeId) => {
+    try {
+      if (!servicesIds) {
+        return createNotification("يجب اختيار الموظف ", "warning");
+      }
+      if (!employeeId) {
+        return createNotification("يجب اختيار خدمة واحدة علي الاقلس", "warning");
+      }
+
+      let response = await axios.post("/api/transactions/create", {
+        servicesIds,
+        employeeId,
+      });
+
+      setIsLoading(true);
+
+      console.log(response);
+
+      let data = await response.data;
+
+      console.log(data.message);
+      console.log(data.status);
+
+      if (!data.status) {
+        createNotification(data.message, "error");
+        return;
+      }
+      createNotification(data.message, "success");
+
+      return;
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return { getData, create };
 };
 
 export default useHome;

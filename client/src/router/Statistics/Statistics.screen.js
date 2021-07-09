@@ -1,26 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { DatePicker } from "@y0c/react-datepicker";
 import { TableRow } from "./components";
+
 //Styles
 import "./style.scss";
 import "@y0c/react-datepicker/assets/styles/calendar.scss";
 
-const Statistics = () => {
-  const [statisticsData, setStatisticsData] = useState([]);
-  const [dateSelected, setDateSelected] = useState(Date.now);
+//hooks
+import useStatistics from "./hooks";
 
-  const formatDate = (value) => {
-    //Get the day string --> mm-dd-yyyy
-    const date = new Date(Date.parse(value));
-    return [
-      date.getDate() < 10 ? `0${date.getDate()}` : date.getDate(),
-      date.getMonth() + 1 < 10
-        ? `0${date.getMonth() + 1}`
-        : date.getMonth() + 1,
-      date.getFullYear(),
-    ].join("-");
-  };
+
+const Statistics = ({employees}) => {
+  const { getData } = useStatistics();
+  const [statisticsData, setStatisticsData] = useState([]);
+  const [dateSelected, setDateSelected] = useState(formatDate(new Date()));
+
+
+
+  useEffect(() => {
+    
+    (async () => {
+      // setDateSelected(formatDate())
+      console.log(dateSelected)
+      setStatisticsData(await getData(dateSelected));
+    })();
+  }, []);
   return (
     <div className="statistics-container">
       <div className="selection">
@@ -41,6 +46,7 @@ const Statistics = () => {
           <DatePicker
             initialDate={new Date().getTime()}
             onChange={(value) => {
+              console.log(value);
               setDateSelected(formatDate(value));
             }}
             dateFormat="DD-MM-YYYY"
@@ -61,21 +67,11 @@ const Statistics = () => {
             </tr>
           </thead>
           <tbody>
-            {/* {statisticsData &&
+            {statisticsData &&
               statisticsData.map((message, index) => (
-                <TableRow index={index} {...message} />
-              ))} */}
+                <TableRow index={index} {...statisticsData} />
+              ))}
 
-            {[1, 2, 3, 4].map((item, index) => (
-              <TableRow
-                index={index}
-                employee="محمد"
-                services={["MediaStreamAudioSourceNode", "asdasd"]}
-                total="1230"
-                user="نور"
-                time="شسشسشس"
-              />
-            ))}
           </tbody>
         </table>
       </div>
@@ -84,6 +80,18 @@ const Statistics = () => {
       </div>
     </div>
   );
+};
+
+const formatDate = (value) => {
+  //Get the day string --> mm-dd-yyyy
+  const date = new Date(Date.parse(value));
+  return [
+    date.getDate() < 10 ? `0${date.getDate()}` : date.getDate(),
+    date.getMonth() + 1 < 10
+      ? `0${date.getMonth() + 1}`
+      : date.getMonth() + 1,
+    date.getFullYear(),
+  ].join("-");
 };
 
 export default Statistics;
