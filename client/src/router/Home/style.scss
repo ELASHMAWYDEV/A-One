@@ -1,16 +1,7 @@
 @import "../../assets/styles/global";
 
 .home-container {
-  .navbar-container {
-    padding: 20px;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    svg {
-      height: 50px;
-      width: 150px;
-    }
-  }
+
   .dash-line {
     @include dashLine;
     width: 70%;
