@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { createToken } = require("../../middlewares/jwt");
-const bcrypt = require("bcrypt");
 const UserModel = require("../../models/User.model");
 
 router.post("/", async (req, res) => {
@@ -13,7 +12,7 @@ router.post("/", async (req, res) => {
 		if (!password) return res.json({ status: false, message: "يجب كتابة كلمة المرور" });
 
 		//DB Check
-		let userSearch = await UserModel.findOne({username});
+		let userSearch = await UserModel.findOne({ username });
 		userSearch = userSearch && userSearch.toObject();
 
 		if (!userSearch)
@@ -23,8 +22,7 @@ router.post("/", async (req, res) => {
 			});
 
 		//Password Match
-		if (!(await bcrypt.compare(password, userSearch.password)))
-			return res.json({ status: false, message: "كلمة المرور غير صحيحة" });
+		if (password != userSearch.password) return res.json({ status: false, message: "كلمة المرور غير صحيحة" });
 
 		//delete the password from user object
 		delete userSearch.password;
