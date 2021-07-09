@@ -65,16 +65,25 @@ $red: #F14646;
 @include media(desktop-lg) {
   
 }
+@include media(desktop-md) {
+  
+}
 @include media(desktop-sm) {
 
 }
 @include media(tablet-lg) {
 
 }
+@include media(tablet-md) {
+
+}
 @include media(tablet-sm) {
 
 }
 @include media(phone-lg) {
+
+}
+@include media(phone-md) {
 
 }
 @include media(phone-sm) {
@@ -101,6 +110,7 @@ body {
 	font-family: 'Cairo', sans-serif;
 	box-sizing: border-box;
 	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
 //scrollbar style
