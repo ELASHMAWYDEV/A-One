@@ -27,6 +27,8 @@
             padding: 12px 20px;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
             border-radius: 10px;
+            color: black;
+            font-weight: bold;
           }
           button{
               background-color: $yellow-primary;
@@ -39,6 +41,7 @@
               border: none;
               outline: none;
               cursor: pointer;
+              font-size: 16px;
               &:hover{
                 background-color: rgb(233, 164, 16);
               }

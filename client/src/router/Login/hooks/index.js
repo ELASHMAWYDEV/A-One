@@ -7,6 +7,7 @@ const useLogin = () => {
 
   const login = async (username, password) => {
     try {
+      setIsLoading(true);
       if (!username) {
         return createNotification("يجب كتابة اسم المستخدم ", "warning");
       }
@@ -19,7 +20,6 @@ const useLogin = () => {
         password,
       });
 
-      setIsLoading(true);
 
       console.log(response);
 

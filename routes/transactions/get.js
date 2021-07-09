@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
 			return res.json({ status: false, message: "الموظف الذي اخترته غير مسجل من قبل" });
 
 		//Get all transactions for the submitted day
-		const transactions = await TransactionModel.find({ ...(employeeId && { employee: employeeId }), day });
+		const transactions = await TransactionModel.find({ ...(employeeId && { "employee._id": employeeId }), day });
 
 		if (transactions.length == 0) return res.json({ status: false, message: "لا يوجد أي عمليات لهذا اليوم" });
 
