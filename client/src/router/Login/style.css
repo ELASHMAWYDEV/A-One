@@ -1,31 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
-/*
---------------------------
----To use media queries---
---------------------------
-
-@include media(desktop-lg) {
-  
-}
-@include media(desktop-sm) {
-
-}
-@include media(tablet-lg) {
-
-}
-@include media(tablet-sm) {
-
-}
-@include media(phone-lg) {
-
-}
-@include media(phone-sm) {
-
-}
-
-*/
 /*****************************************/
 body {
   margin: 0;
@@ -48,6 +23,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 *::-webkit-scrollbar {
@@ -71,157 +47,6 @@ input::-webkit-inner-spin-button {
 /********************************************************/
 /******************************/
 /******************************/
-/*@mixin box-animate {
-	animation: box 0.3s ease 1;
-}
-@keyframes box {
-	0% {
-		opacity: 0;
-		transform: translateY(-30px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(unset);
-	}
-}
-/******************************/
-/*@mixin table-container {
-	box-shadow: 0px 3px 6px $light-grey;
-	overflow: hidden;
-	overflow-x: auto;
-	margin: 40px 20px;
-	border-radius: 15px;
-	table {
-		border-collapse: collapse;
-		width: 100%;
-		thead {
-			th {
-				border-bottom: 1px solid $grey;
-				padding: 5px;
-				font-size: 16px;
-				font-weight: 500;
-				color: $grey;
-				white-space: nowrap;
-				text-align: right;
-				padding-left: 50px;
-				&:nth-child(1) {
-					padding-right: 40px;
-				}
-			}
-		}
-		tbody {
-			tr {
-				.edit-icon {
-					background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0%
-						no-repeat padding-box;
-					position: absolute;
-					left: 40px;
-					width: 30px;
-					height: 30px;
-					border-radius: 50%;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					color: $white;
-					cursor: pointer;
-					&:hover {
-						background: linear-gradient(79deg, $pink 0%, $light-orange 0%, $yellow 100%) 0% 0% no-repeat;
-					}
-					&:active {
-						transition: none;
-						transform: scale(0.95);
-					}
-				}
-				td {
-					position: relative;
-					padding: 12px 0px;
-					padding-left: 25px;
-					&:nth-child(1) {
-						padding-right: 40px;
-					}
-				}
-				input {
-					background-color: transparent;
-					outline: none;
-					border: none;
-					text-align: center;
-					font-size: 15px;
-					color: $dark-green;
-					font-weight: 500;
-					display: inline-block;
-					width: max-content;
-					padding: 5px 10px;
-					border-radius: 8px;
-					&:focus,
-					&.active {
-						background-color: rgba($dark-green, 1);
-						color: $white;
-					}
-					&[type='number'] {
-						padding-left: 0;
-						max-width: 80px;
-						text-align: right;
-					}
-				}
-				&:nth-child(even) {
-					background-color: rgba($mid-grey, 0.7);
-					input {
-						color: $white;
-					}
-					td {
-						color: $white;
-					}
-				}
-			}
-			.delete-btn-container {
-				background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0% no-repeat
-					padding-box;
-				box-shadow: 0px 3px 6px #00000029;
-				border-radius: 8px;
-				opacity: 1;
-				display: flex;
-				justify-content: space-around;
-				padding: 5px 20px;
-				margin-left: 40px;
-				cursor: pointer;
-				width: max-content;
-				outline: none;
-				border: none;
-				transition: 0.3s ease;
-				&:hover {
-					background: linear-gradient(79deg, $pink 0%, $light-orange 0%, $yellow 100%) 0% 0% no-repeat;
-				}
-				&:active {
-					transition: none;
-					transform: scale(0.95);
-				}
-				p {
-					color: $white;
-					font-size: 14px;
-				}
-				svg {
-					font-size: 20px;
-					color: white;
-					margin-right: 8px;
-				}
-			}
-		}
-		tfoot {
-			background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0% no-repeat
-				padding-box;
-			tr {
-				td {
-					padding: 12px;
-					padding-right: 10px;
-					color: $white;
-					font-size: 20px;
-					font-weight: 500;
-				}
-			}
-		}
-	}
-}
-*/
 .login-container .container {
   width: 100%;
   min-height: 100vh;
@@ -237,10 +62,24 @@ input::-webkit-inner-spin-button {
 
 .login-container .container .form-container {
   margin-right: 40px;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-container .container .form-container form {
   margin-top: 100px;
+  width: 100%;
 }
 
 .login-container .container .form-container form div {
@@ -280,6 +119,9 @@ input::-webkit-inner-spin-button {
   background-position: center;
   width: 100%;
   position: relative;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
 }
 
 .login-container .container .background-container .layer {
@@ -307,5 +149,49 @@ input::-webkit-inner-spin-button {
   width: 50%;
   padding: 20px 25px;
   font-family: 'Otomanopee One', sans-serif;
+}
+
+@media only screen and (max-width: 1024px) {
+  .login-container .container .background-container .layer h2 {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 798px) {
+  .login-container .container {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .login-container .container .form-container {
+    margin-right: 0px;
+  }
+  .login-container .container .form-container form {
+    margin-top: 5vh;
+    padding: 0px 30px;
+  }
+  .login-container .container .form-container form div {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .login-container .container .form-container form div.button-container {
+    margin-top: 40px;
+  }
+  .login-container .container .form-container form a {
+    display: inline-block;
+    width: 80%;
+  }
+  .login-container .container .background-container .layer h2 {
+    font-size: 24px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

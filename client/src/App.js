@@ -1,4 +1,6 @@
 import React from "react";
+import { useAuthContext } from "./Providers";
+
 import {
   BrowserRouter as Router,
   Redirect,
@@ -12,6 +14,8 @@ import { Login, Home, Statistics } from "./router";
 import "./style.scss";
 
 function App() {
+  const { isLoggedIn } = useAuthContext();
+
   return (
     <div className="app-container">
       <Router>
