@@ -1,15 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { AppProvider } from "./Providers";
+
+import "react-notifications/lib/notifications.css";
 
 document.querySelector("title").textContent = "A-One";
 document.querySelector("html").setAttribute("lang", "ar");
 document.querySelector("html").setAttribute("dir", "rtl");
 
+
+
 ReactDOM.render(
   <React.StrictMode>
+  <AppProvider>
     <App />
-  </React.StrictMode>,
+  </AppProvider>
+</React.StrictMode>,
   document.getElementById('root')
 );
 
