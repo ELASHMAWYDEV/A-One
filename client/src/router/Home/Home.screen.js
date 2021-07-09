@@ -11,7 +11,7 @@ import { Employees, Services } from "../../components";
 import { Box } from "../../components";
 
 const Home = () => {
-  const { getData } = useHome();
+  const { getData, create } = useHome();
   const [homeData, setHomeData] = useState([]);
   const [servicesActiveIds, setServicesActiveIds] = useState([]);
   const [employeeActiveId, setEmployeeActiveId] = useState(null);
@@ -21,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     let sum = 0;
     for (let serviceId of servicesActiveIds) {
-      let service = homeData.services.find((item) => item.id === serviceId);
+      let service = homeData.services.find((item) => item._id === serviceId);
       sum += service.price;
     }
     console.log(sum);
@@ -31,17 +31,18 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      const data = await getData();
-      if (data) {
-        console.log(data.data);
-        setHomeData(...homeData, data.data);
-      }
+      setHomeData(await getData());
     })();
   }, []);
 
   return (
     <div className="home-container">
-      <Employees emp={homeData.employees} />
+      <Employees
+        employees={homeData.employees}
+        onChange={(value) => {
+          setEmployeeActiveId(value);
+        }}
+      />
       <div className="dash-line"></div>
       <Services
         services={homeData.services}
@@ -52,7 +53,16 @@ const Home = () => {
       <div className="add-button">
         <button onClick={() => setVisible(true)}>اضافة</button>
       </div>
-      <Box visible={visible} setVisible={setVisible} price={total} />
+      <Box
+        visible={visible}
+        setVisible={setVisible}
+        price={total}
+        onConfirm={async () =>
+          (await create({ servicesActiveIds, employeeActiveId }))
+            ? setVisible(false)
+            : null
+        }
+      />
     </div>
   );
 };
