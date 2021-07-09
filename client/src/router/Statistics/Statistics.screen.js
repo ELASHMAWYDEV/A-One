@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { CSVLink } from "react-csv";
 import { DatePicker } from "@y0c/react-datepicker";
 import { TableRow } from "./components";
 
@@ -15,6 +15,7 @@ const Statistics = () => {
   const [statisticsData, setStatisticsData] = useState({});
   const [dateSelected, setDateSelected] = useState(formatDate(new Date()));
   const [employeeSelected, setEmployeeSelected] = useState("");
+  const [csvData, setCsvData] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -24,6 +25,30 @@ const Statistics = () => {
     })();
   }, [dateSelected, employeeSelected]);
 
+  useEffect(() => {
+    if (statisticsData.transactions) {
+      setCsvData(
+        statisticsData.transactions.map((item, index) => [
+          index + 1,
+          item.employee.name,
+          item.services &&
+            item.services.map(
+              (service, index) =>
+                service.name + "    " + service.price + "  ج.م\n"
+            ),
+          item.total,
+          item.cashier.name,
+          new Intl.DateTimeFormat("ar-EG", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+          }).format(Date.parse(item.time)),
+        ])
+      );
+    }
+  }, [statisticsData]);
   return (
     <div className="statistics-container">
       <div className="selection">
@@ -80,7 +105,14 @@ const Statistics = () => {
         </table>
       </div>
       <div className="export-button">
-        <button>تصدير</button>
+        <CSVLink
+          data={[
+            ["#", "الموظف", "الخدمات", "الاجمالي", "الكاشير", "الوقت"],
+            ...csvData,
+          ]}
+        >
+          <button>تصدير</button>
+        </CSVLink>
       </div>
     </div>
   );
