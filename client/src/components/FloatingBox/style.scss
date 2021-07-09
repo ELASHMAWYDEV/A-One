@@ -52,12 +52,14 @@
     }
     h4 {
       font-size: 20px;
+      font-family: "Changa", sans-serif;
+
     }
     .price {
       color: $yellow-primary;
       font-weight: bold;
       margin-top: 5px;
-      font-size: 30px;
+      font-size: 40px;
       font-family: "Changa", sans-serif;
     }
 
@@ -76,6 +78,7 @@
         cursor: pointer;
         color: $white;
         font-weight: bold;
+        font-size: 16px;
         &:hover {
           //background-color: $yellow-primary;
           transition: all 0.3s ease;
