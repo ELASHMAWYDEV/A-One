@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import { Link } from "react-router-dom";
+import { useOnClickOutside } from "../../hooks";
+
 //Styles
 import "./style.scss";
 
@@ -8,20 +10,25 @@ import "./style.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 
 const Navbar = () => {
+  const [visible, setVisible] = useState(false);
+  const sideMenuRef = useRef(null);
+
+  useOnClickOutside(sideMenuRef, () => setVisible(false));
   return (
     <div className="navbar-container">
       <Logo />
-      <div className="menu-container">
-        <div className="burger-menu">
+      <div className="menu-container" ref={sideMenuRef}>
+        <div
+          className={`burger-menu ${visible ? "remove" : ""}`}
+          onClick={() => setVisible(!visible)}
+        >
           <span></span>
           <span className="middle"></span>
           <span></span>
         </div>
-        <div className="side-menu">
+        <div className={`side-menu ${visible ? "active" : ""}`}>
           <Link to="/home">الكاشير</Link>
-
           <Link to="/statistics">الإحصائيات</Link>
-
           <button>تسجيل الخروج</button>
         </div>
       </div>

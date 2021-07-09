@@ -10,7 +10,7 @@ const useOnClickOutside = (containerRef, callBack) => {
     e.preventDefault();
 
     if (containerRef.current && !containerRef.current.contains(e.target)) {
-      return callBack();
+      callBack();
     }
   };
 };
