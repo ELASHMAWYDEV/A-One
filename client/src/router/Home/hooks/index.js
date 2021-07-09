@@ -24,13 +24,14 @@ const useHome = () => {
     }
   };
 
-  const create = async (servicesIds, employeeId) => {
+  const create = async ({servicesIds, employeeId}) => {
     try {
+      console.log(servicesIds, employeeId)
       if (!servicesIds) {
         return createNotification("يجب اختيار الموظف ", "warning");
       }
       if (!employeeId) {
-        return createNotification("يجب اختيار خدمة واحدة علي الاقلس", "warning");
+        return createNotification("يجب اختيار خدمة واحدة علي الاقل", "warning");
       }
 
       let response = await axios.post("/api/transactions/create", {
@@ -49,13 +50,14 @@ const useHome = () => {
 
       if (!data.status) {
         createNotification(data.message, "error");
-        return;
+        return{};
       }
       createNotification(data.message, "success");
 
-      return;
+      return data.data;
     } catch (e) {
       alert(e.message);
+      return {};
     } finally {
       setIsLoading(false);
     }

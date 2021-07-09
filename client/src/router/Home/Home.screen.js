@@ -58,7 +58,7 @@ const Home = () => {
         setVisible={setVisible}
         price={total}
         onConfirm={async () =>
-          (await create({ servicesActiveIds, employeeActiveId }))
+          (await create({servicesIds: servicesActiveIds,employeeId: employeeActiveId }))
             ? setVisible(false)
             : null
         }

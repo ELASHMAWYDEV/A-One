@@ -10,22 +10,25 @@ import "@y0c/react-datepicker/assets/styles/calendar.scss";
 //hooks
 import useStatistics from "./hooks";
 
-
-const Statistics = ({employees}) => {
+const Statistics = ({ employees }) => {
   const { getData } = useStatistics();
-  const [statisticsData, setStatisticsData] = useState([]);
+  const [statisticsData, setStatisticsData] = useState({});
   const [dateSelected, setDateSelected] = useState(formatDate(new Date()));
-
-
+  const [employeeSelected, setEmployeeSelected] = useState("");
 
   useEffect(() => {
-    
     (async () => {
-      // setDateSelected(formatDate())
-      console.log(dateSelected)
-      setStatisticsData(await getData(dateSelected));
+      console.log(dateSelected);
+      setStatisticsData(
+        await getData({ day: dateSelected, employeeId: employeeSelected })
+      );
     })();
-  }, []);
+  },[])
+
+    useEffect(() => {
+      console.log(statisticsData)
+    },[statisticsData]);
+
   return (
     <div className="statistics-container">
       <div className="selection">
@@ -33,9 +36,11 @@ const Statistics = ({employees}) => {
           <div>
             <label>اختر موظف</label>
           </div>
-          <select>
-            <option>محمد</option>
-            <option>محمد</option>
+          <select onChange={(e) => setEmployeeSelected(e.target.value)}>
+            <option value="">الكل</option>
+            {statisticsData.employees && statisticsData.employees.map((employee, index) => (
+              <option value={employee._id}>{employee.name}</option>
+            ))}
           </select>
           <span></span>
         </div>
@@ -67,11 +72,10 @@ const Statistics = ({employees}) => {
             </tr>
           </thead>
           <tbody>
-            {statisticsData &&
-              statisticsData.map((message, index) => (
-                <TableRow index={index} {...statisticsData} />
+            {statisticsData.transactions &&
+              statisticsData.transactions.map((message, index) => (
+                <TableRow index={index} {...statisticsData.transactions} />
               ))}
-
           </tbody>
         </table>
       </div>
@@ -80,16 +84,14 @@ const Statistics = ({employees}) => {
       </div>
     </div>
   );
-};
+}
 
 const formatDate = (value) => {
   //Get the day string --> mm-dd-yyyy
   const date = new Date(Date.parse(value));
   return [
     date.getDate() < 10 ? `0${date.getDate()}` : date.getDate(),
-    date.getMonth() + 1 < 10
-      ? `0${date.getMonth() + 1}`
-      : date.getMonth() + 1,
+    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1,
     date.getFullYear(),
   ].join("-");
 };
