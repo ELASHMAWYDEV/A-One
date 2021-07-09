@@ -49,8 +49,9 @@
  {
    status: true,
    message: "تم استرجاع البيانات بنجاح",
-   data: [
-     {
+   data: {
+    transactions: [
+      {
         _id: "dsafdsafeaedascsaeafe",
         services: [
           {
@@ -75,8 +76,19 @@
         total: 60,
         day: "07-09-2021",
         time: "2021-04-30T14:11:15.378+00:00"
-     }
-   ]
+      }
+    ],
+    employees: [
+      {
+        _id: "fdfdsacdasvsd",
+        name: "مؤمن"
+      },
+      {
+        _id: "fknoengionqe",
+        name: "محمود"
+      }
+    ],
+  }
  }
 ```
 ***
