@@ -1,24 +1,14 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 
 //Styles
 import "./style.scss";
 
-const Employees = () => {
+const Employees = ({employees, onChange}) => {
   const [employeeActiveId, setEmployeeActiveId] = useState(null);
-  const [employees, setEmployees] = useState([
-    {
-      id: 1,
-      name: "مؤمن",
-    },
-    {
-      id: 2,
-      name: "محمود",
-    },
-    {
-      id: 3,
-      name: "عمر",
-    },
-  ]);
+ 
+  useEffect(() => {
+    onChange(employeeActiveId);
+  }, [employeeActiveId])
   return (
     <div className="employees-container">
       <div className="title">

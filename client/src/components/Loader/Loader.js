@@ -1,5 +1,5 @@
-import BounceLoader from "react-spinners/BounceLoader";
-import { useAppContext } from "../../../Providers";
+import HashLoader from "react-spinners/HashLoader";
+import { useAppContext } from "../../Providers";
 
 //Style
 import "./style.scss";
@@ -10,7 +10,7 @@ const Loader = () => {
   return (
     isLoading && (
       <div className="loader-container">
-        <BounceLoader loading color="#ffffff" size={50} />
+        <HashLoader loading color="#ffffff" size={50} />
       </div>
     )
   );
