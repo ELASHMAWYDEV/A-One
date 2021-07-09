@@ -7,7 +7,8 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import { Navbar } from "./components";
+
+import { Navbar, Loader } from "./components";
 import { Login, Home, Statistics } from "./router";
 
 //Styles
@@ -18,15 +19,23 @@ function App() {
 
   return (
     <div className="app-container">
+      <Loader />
       <Router>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <div>
-            <Navbar />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/Statistics" component={Statistics} />
-          </div>
-        </Switch>
+        {isLoggedIn ? (
+          <>
+            <Switch>
+              <Navbar />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/statistics" component={Statistics} />
+              <Redirect to="/home" />
+            </Switch>
+          </>
+        ) : (
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Redirect to="/login" />
+          </Switch>
+        )}
       </Router>
     </div>
   );

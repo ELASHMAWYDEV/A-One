@@ -23,8 +23,7 @@
       font-weight: bold;
       cursor: pointer;
       &:hover {
-        background-color: rgb(233, 164, 16);
-
+        background-color: rgba(233, 164, 16, 0.938);
         transition: all 0.3s ease;
       }
       &:active {

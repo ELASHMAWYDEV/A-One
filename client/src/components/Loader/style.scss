@@ -1,4 +1,4 @@
-@import "../../../assets/styles/global";
+@import "../../assets/styles/global";
 
 .loader-container {
   position: fixed;
@@ -6,7 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba($dark-grey, 0.9);
+  background-color: rgba($gray, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
