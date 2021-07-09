@@ -3,12 +3,8 @@ import React, { useState , useEffect} from "react";
 //Styles
 import "./style.scss";
 
-const Employees = ({employees, onChange = () => null}) => {
-  const [employeeActiveId, setEmployeeActiveId] = useState(null);
+const Employees = ({employees, onChange = () => null, value}) => {
  
-  useEffect(() => {
-    onChange(employeeActiveId);
-  }, [employeeActiveId])
   return (  
     <div className="employees-container">
       <div className="title">
@@ -19,9 +15,9 @@ const Employees = ({employees, onChange = () => null}) => {
           employees.map((employee, index) => (
             <div
               className={`employee-button ${
-                employeeActiveId === employee._id ? "active" : ""
+                value === employee._id ? "active" : ""
               }`}
-              onClick={() => setEmployeeActiveId(employee._id)}
+              onClick={() => onChange(employee._id)}
             >
               {employee.name}
             </div>

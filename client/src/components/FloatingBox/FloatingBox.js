@@ -20,7 +20,7 @@ const FloatingBox = ({ visible, setVisible, price, onConfirm }) => {
           <div className="price">{price} ج.م</div>
           <div className="action-buttons">
             <div className="confirm-button">
-              <button onClick={onConfirm()}>تأكيد</button>
+              <button onClick={onConfirm}>تأكيد</button>
             </div>
             <div className="cancel-button">
               <button onClick={() => setVisible(false)}>
