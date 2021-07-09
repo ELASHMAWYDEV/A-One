@@ -4,13 +4,10 @@ import React, { useState, useEffect } from "react";
 //Styles
 import "./style.scss";
 
-const Services = ({services, onChange}) => {
-  const [servicesActiveIds, setServicesActiveIds] = useState([]);
+const Services = ({services, onChange, value}) => {
   
 
-  useEffect(() => {
-    onChange(servicesActiveIds);
-  }, [servicesActiveIds]);
+
 
   return (
     <div className="services-container">
@@ -22,14 +19,14 @@ const Services = ({services, onChange}) => {
           services.map((service, index) => (
             <div
               className={`service-button ${
-                servicesActiveIds.includes(service._id) ? "active" : ""
+                value.includes(service._id) ? "active" : ""
               }`}
               onClick={() => {
-                servicesActiveIds.includes(service._id)
-                  ? setServicesActiveIds(
-                      servicesActiveIds.filter((s) => service._id !== s)
+                value.includes(service._id)
+                  ? onChange(
+                      value.filter((s) => service._id !== s)
                     )
-                  : setServicesActiveIds([...servicesActiveIds, service._id]);
+                  : onChange([...value, service._id]);
               }}
             >
               <div>{service.name}</div>
