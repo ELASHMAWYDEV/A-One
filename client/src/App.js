@@ -5,7 +5,8 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import {Login, Home} from "./router";
+import { Navbar } from "./components";
+import { Login, Home } from "./router";
 
 //Styles
 import "./style.scss";
@@ -16,7 +17,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route exact path="/home" component={Home} />
+          <div>
+            <Navbar />
+            <Route exact path="/home" component={Home} />
+          </div>
         </Switch>
       </Router>
     </div>

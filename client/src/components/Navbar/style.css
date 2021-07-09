@@ -222,52 +222,111 @@ input::-webkit-inner-spin-button {
 	}
 }
 */
-.home-container .dash-line {
-  margin: 50px auto;
-  background-color: #95A5A6;
-  background-position: bottom;
-  background-size: 8% 2px;
-  background-repeat: repeat-x;
-  width: 100%;
-  height: 2px;
-  width: 70%;
-}
-
-.home-container .add-button {
-  width: 70%;
-  margin: auto;
+.navbar-container {
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-top: 50px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
-.home-container .add-button button {
+.navbar-container svg {
+  height: 50px;
+  width: 150px;
+}
+
+.navbar-container .menu-container {
+  position: relative;
+}
+
+.navbar-container .menu-container .burger-menu {
   background-color: #FFC619;
-  padding: 4px 50px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-  color: #ffffff;
-  font-weight: bold;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 45px;
+  height: 45px;
+  -webkit-box-shadow: 0px 3px 6px #95A5A6;
+          box-shadow: 0px 3px 6px #95A5A6;
 }
 
-.home-container .add-button button:hover {
-  background-color: #e9a410;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.navbar-container .menu-container .burger-menu:hover {
+  background-color: rgba(233, 164, 16, 0.938);
 }
 
-.home-container .add-button button:active {
+.navbar-container .menu-container .burger-menu:active {
   -webkit-transition: none;
   transition: none;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+.navbar-container .menu-container .burger-menu span {
+  border-top: 3px solid #ffffff;
+  width: 17px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.navbar-container .menu-container .burger-menu .middle {
+  width: 25px;
+}
+
+.navbar-container .menu-container .side-menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #FFC619;
+  padding: 20px 25px;
+  width: 180px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 8px;
+  border-top-right-radius: 50px;
+}
+
+.navbar-container .menu-container .side-menu a {
+  width: 100%;
+  background-color: #ffffff;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useOnClickOutside } from "../../hooks";
 
 //Styles
 import "./style.scss";
 
 const FloatingBox = ({ visible, setVisible, price, onConfirm }) => {
+  const floatingBoxRef = useRef(null);
+  useOnClickOutside(floatingBoxRef, () => setVisible(false));
+
   return (
     visible && (
       <div className="floating-box-container">
-        <div className="box-details">
-        <div className="closing" onClick={() => setVisible(false)}>
-          <span></span>
-          <span></span>
-        </div>
+        <div className="box-details" ref={floatingBoxRef}>
+          <div className="closing" onClick={() => setVisible(false)}>
+            <span></span>
+            <span></span>
+          </div>
           <h4>السعر النهائي</h4>
           <div className="price">{price} ج.م</div>
           <div className="action-buttons">
@@ -19,7 +23,9 @@ const FloatingBox = ({ visible, setVisible, price, onConfirm }) => {
               <button>تأكيد</button>
             </div>
             <div className="cancel-button">
-              <button>إلغاء</button>
+              <button onClick={() => setVisible(false)}>
+                إلغاء
+              </button>
             </div>
           </div>
         </div>
