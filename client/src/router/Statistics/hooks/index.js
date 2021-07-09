@@ -4,28 +4,30 @@ import { useAppContext } from "../../../Providers";
 const useStatistics = () => {
   const { createNotification, setIsLoading } = useAppContext();
 
-  const getData = async ({employeeId, date}) => {
+  const getData = async ({employeeId, day}) => {
     try {
-      if (!date) {
+        setIsLoading(true);
+      if (!day) {
         return createNotification("يجب اختيار اليوم", "warning");
       }
+
+      console.log(day);
       let response = await axios.post("/api/transactions/get", {
         employeeId,
-        date,
+        day,
       });
 
-      setIsLoading(true);
       let data = await response.data;
       console.log(data);
 
       if (!data.status) {
         createNotification(data.message, "error");
-        return;
+        return {};
       }
-
-      return;
+      return data.data;
     } catch (e) {
       alert(e.message);
+      return {};
     } finally {
       setIsLoading(false);
     }

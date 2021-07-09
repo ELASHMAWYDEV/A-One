@@ -42,7 +42,7 @@
  Request
  {
    employeeId: "dfsdckeonf", //Null
-   date: "01-27-2021" //mm-dd-yyyy
+   day: "01-27-2021" //mm-dd-yyyy
  }
 
  Response
