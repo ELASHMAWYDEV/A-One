@@ -1,12 +1,12 @@
 //Colors
 $white: #ffffff;
-$yellow-primary: #FFC619;
-$gray: #95A5A6;
-$red: #F14646;
+$yellow-primary: #ffc619;
+$gray: #95a5a6;
+$red: #f14646;
 //Fonts
-@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
 
 //Media Queries
 @mixin media($breakpoint) {
@@ -57,33 +57,23 @@ $red: #F14646;
 	}
 }
 
-
 // @include media(desktop-lg) {
-  
 // }
 // @include media(desktop-md) {
-	
 // }
 // @include media(desktop-sm) {
-
 // }
 // @include media(tablet-lg) {
-
 // }
 // @include media(tablet-md) {
-
 // }
 // @include media(tablet-sm) {
-
 // }
 // @include media(phone-lg) {
-
 // }
 // @include media(phone-md) {
-
 // }
 // @include media(phone-sm) {
-
 // }
 /*****************************************/
 
@@ -92,7 +82,7 @@ $red: #F14646;
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Cairo', sans-serif;
+	font-family: "Cairo", sans-serif;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -100,7 +90,7 @@ body {
 * {
 	margin: 0;
 	padding: 0;
-	font-family: 'Cairo', sans-serif;
+	font-family: "Cairo", sans-serif;
 	box-sizing: border-box;
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
