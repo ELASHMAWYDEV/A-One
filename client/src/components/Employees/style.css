@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,7 +19,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
@@ -69,19 +69,22 @@ input::-webkit-inner-spin-button {
 }
 
 .employees-container .employees div {
-  background-color: #95A5A6;
+  background-color: #95a5a6;
   padding: 4px 60px;
   border-radius: 50px;
   margin: 25px;
   color: #ffffff;
   cursor: pointer;
   font-weight: bold;
+  min-width: 170px;
+  max-width: 100%;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  text-align: center;
 }
 
 .employees-container .employees div:hover {
-  background-color: #FFC619;
+  background-color: #ffc619;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -94,6 +97,12 @@ input::-webkit-inner-spin-button {
 }
 
 .employees-container .employees .active {
-  background-color: #FFC619;
+  background-color: #ffc619;
+}
+
+@media only screen and (max-width: 576px) {
+  .employees-container .employees div {
+    margin: 15px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

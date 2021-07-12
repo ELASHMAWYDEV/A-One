@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,7 +19,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
@@ -78,7 +78,7 @@ input::-webkit-inner-spin-button {
 .navbar-container .menu-container .burger-menu {
   position: relative;
   z-index: 2;
-  background-color: #FFC619;
+  background-color: #ffc619;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,8 +98,8 @@ input::-webkit-inner-spin-button {
   transition: 0.3s ease;
   width: 45px;
   height: 45px;
-  -webkit-box-shadow: 0px 3px 6px #95A5A6;
-          box-shadow: 0px 3px 6px #95A5A6;
+  -webkit-box-shadow: 0px 3px 6px #95a5a6;
+          box-shadow: 0px 3px 6px #95a5a6;
 }
 
 .navbar-container .menu-container .burger-menu:hover {
@@ -135,8 +135,8 @@ input::-webkit-inner-spin-button {
   z-index: 1;
   -webkit-clip-path: circle(0% at 100% 0%);
           clip-path: circle(0% at 100% 0%);
-  -webkit-box-shadow: 0px 3px 6px #95A5A6;
-          box-shadow: 0px 3px 6px #95A5A6;
+  -webkit-box-shadow: 0px 3px 6px #95a5a6;
+          box-shadow: 0px 3px 6px #95a5a6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +150,7 @@ input::-webkit-inner-spin-button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #FFC619;
+  background-color: #ffc619;
   padding: 20px 25px 10px 25px;
   width: 200px;
   height: -webkit-fit-content;
@@ -175,8 +175,13 @@ input::-webkit-inner-spin-button {
   border-radius: 8px;
 }
 
+.navbar-container .menu-container .side-menu a:hover {
+  background-color: rgba(233, 164, 16, 0.938);
+  color: #ffffff;
+}
+
 .navbar-container .menu-container .side-menu button {
-  background-color: #F14646;
+  background-color: #f14646;
   padding: 4px 20px;
   border: none;
   outline: none;
@@ -185,6 +190,10 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.navbar-container .menu-container .side-menu button:hover {
+  background-color: rgba(241, 70, 70, 0.7);
 }
 
 .navbar-container .menu-container .active {

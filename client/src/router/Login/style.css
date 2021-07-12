@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,7 +19,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
@@ -96,19 +96,25 @@ input::-webkit-inner-spin-button {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   border-radius: 10px;
+  color: black;
+  font-weight: bold;
 }
 
-.login-container .container .form-container form div a {
-  background-color: #FFC619;
+.login-container .container .form-container form div button {
+  background-color: #ffc619;
   padding: 8px 20px;
   text-align: center;
   color: #ffffff;
   font-weight: bold;
   border-radius: 10px;
   text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.login-container .container .form-container form div a:hover {
+.login-container .container .form-container form div button:hover {
   background-color: #e9a410;
 }
 

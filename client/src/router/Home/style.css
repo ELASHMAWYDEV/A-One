@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,7 +19,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
@@ -47,15 +47,54 @@ input::-webkit-inner-spin-button {
 /********************************************************/
 /******************************/
 /******************************/
+.home-container {
+  padding: 30px;
+}
+
 .home-container .dash-line {
   margin: 50px auto;
-  background-color: #95A5A6;
+  background-color: #95a5a6;
   background-position: bottom;
   background-size: 8% 2px;
   background-repeat: repeat-x;
   width: 100%;
   height: 2px;
   width: 70%;
+}
+
+.home-container .extra-service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  margin: auto;
+}
+
+.home-container .extra-service div {
+  margin-left: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.home-container .extra-service div input {
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  color: black;
+  font-weight: 800;
+}
+
+.home-container .extra-service div input[type="text"] {
+  padding-left: 50px;
 }
 
 .home-container .add-button {
@@ -71,7 +110,7 @@ input::-webkit-inner-spin-button {
 }
 
 .home-container .add-button button {
-  background-color: #FFC619;
+  background-color: #ffc619;
   padding: 4px 50px;
   border-radius: 10px;
   outline: none;
@@ -81,6 +120,7 @@ input::-webkit-inner-spin-button {
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .home-container .add-button button:hover {
@@ -94,5 +134,15 @@ input::-webkit-inner-spin-button {
   transition: none;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+@media only screen and (max-width: 798px) {
+  .home-container .add-button {
+    width: auto;
+    margin-top: 40px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */

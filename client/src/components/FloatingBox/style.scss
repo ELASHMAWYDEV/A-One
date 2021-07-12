@@ -1,10 +1,11 @@
 @import "../../assets/styles/global";
 
 .floating-box-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   z-index: 20;
   width: 100%;
   min-height: 100vh;
@@ -62,7 +63,16 @@
       font-size: 40px;
       font-family: "Changa", sans-serif;
     }
-
+    .edited-price{
+      color: $yellow-primary;
+      direction: rtl;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+      span{
+        color: $gray;
+      }
+    }
     .action-buttons {
       display: flex;
       justify-content: space-between;
