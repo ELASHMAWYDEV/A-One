@@ -26,7 +26,9 @@
  Request
  {
    servicesIds: ["dsafdsadsc", "fdsacccaads"],
-   employeeId: "dfsdckeonf"
+   employeeId: "dfsdckeonf",
+   extraServiceDescription: "خدمة اضافية", //Nullable
+   extraServiceAmount: -50, //Nullable
  }
 
  Response
@@ -72,6 +74,10 @@
         cashier: {
           _id: "sadfdascaeqecaefae",
           name: "نور",
+        },
+        extraService: {
+          amount: 10,
+          description: "خدمة اضافية"
         },
         total: 60,
         day: "07-09-2021",
