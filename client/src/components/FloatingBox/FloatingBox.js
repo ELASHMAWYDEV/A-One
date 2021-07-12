@@ -4,7 +4,14 @@ import { useOnClickOutside } from "../../hooks";
 //Styles
 import "./style.scss";
 
-const FloatingBox = ({ visible, setVisible, price, onConfirm }) => {
+const FloatingBox = ({
+  visible,
+  setVisible,
+  price,
+  onConfirm,
+  editedName ,
+  editedPrice = 0 ,
+}) => {
   const floatingBoxRef = useRef(null);
   useOnClickOutside(floatingBoxRef, () => setVisible(false));
 
@@ -17,15 +24,18 @@ const FloatingBox = ({ visible, setVisible, price, onConfirm }) => {
             <span></span>
           </div>
           <h4>السعر النهائي</h4>
-          <div className="price">{price} ج.م</div>
+          <div className="price">{price + parseInt(editedPrice)} ج.م</div>
+          {editedPrice > 0 && (
+            <div className="edited-price">
+            <span>{editedName}</span> + {editedPrice} ج.م  
+          </div>
+          )}
           <div className="action-buttons">
             <div className="confirm-button">
               <button onClick={onConfirm}>تأكيد</button>
             </div>
             <div className="cancel-button">
-              <button onClick={() => setVisible(false)}>
-                إلغاء
-              </button>
+              <button onClick={() => setVisible(false)}>إلغاء</button>
             </div>
           </div>
         </div>
