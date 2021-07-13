@@ -37,6 +37,7 @@ const Statistics = () => {
                 service.name + "    " + service.price + "  ج.م\n"
             ),
           item.total,
+          item.extraService.description + item.extraService.amount, 
           item.cashier.name,
           new Intl.DateTimeFormat("ar-EG", {
             year: "numeric",
@@ -92,6 +93,7 @@ const Statistics = () => {
               <th>الموظف</th>
               <th>الخدمات</th>
               <th>الإجمالي</th>
+              <th>الخدمات الاضافية</th>
               <th>الكاشير</th>
               <th>الوقت</th>
             </tr>
@@ -107,7 +109,7 @@ const Statistics = () => {
       <div className="export-button">
         <CSVLink
           data={[
-            ["#", "الموظف", "الخدمات", "الاجمالي", "الكاشير", "الوقت"],
+            ["#", "الموظف", "الخدمات", "الاجمالي", "الخدمات الاضافية","الكاشير", "الوقت"],
             ...csvData,
           ]}
         >

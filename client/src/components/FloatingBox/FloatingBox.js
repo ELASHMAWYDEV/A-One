@@ -25,9 +25,9 @@ const FloatingBox = ({
           </div>
           <h4>السعر النهائي</h4>
           <div className="price">{price + parseInt(editedPrice)} ج.م</div>
-          {editedPrice > 0 && (
+          {editedPrice != 0 && (
             <div className="edited-price">
-            <span>{editedName}</span> + {editedPrice} ج.م  
+            <span>{editedName}</span> {editedPrice > 0? "+" : ""} {editedPrice} ج.م  
           </div>
           )}
           <div className="action-buttons">

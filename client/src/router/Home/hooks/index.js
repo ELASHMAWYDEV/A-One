@@ -24,7 +24,7 @@ const useHome = () => {
     }
   };
 
-  const create = async ({servicesIds, employeeId}) => {
+  const create = async ({servicesIds, employeeId, extraServiceDescription, extraServiceAmount}) => {
     try {
       console.log(servicesIds, employeeId)
       if (!servicesIds) {
@@ -37,6 +37,8 @@ const useHome = () => {
       let response = await axios.post("/api/transactions/create", {
         servicesIds,
         employeeId,
+        extraServiceDescription,
+        extraServiceAmount
       });
 
       setIsLoading(true);
