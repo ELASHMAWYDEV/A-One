@@ -44,7 +44,7 @@ router.post("/", async (req, res) => {
     }
 
     //Calculate total amount
-    let total = 0;
+    let total = parseInt(extraServiceAmount) || 0;
     for (let service of services) {
       total += service.price;
     }

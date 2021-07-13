@@ -5,7 +5,7 @@ import "./style.scss";
 
 //Assets
 
-const TableRow = ({ index, employee, services, total, cashier, time }) => {
+const TableRow = ({ index, employee, services, total, cashier, time, extraService }) => {
 	return (
 		<tr>
 			<td>{index + 1}</td>
@@ -14,6 +14,7 @@ const TableRow = ({ index, employee, services, total, cashier, time }) => {
 				<ul>{services && services.map((service, index) => <li key={index}>{service.name + "    " + service.price + "  ج.م"}</li>)}</ul>
 			</td>
 			<td className="total">{total} ج.م</td>
+			<td >{extraService.description} {extraService.amount > 0 ? "+" : ""} {extraService.amount}ج.م</td>
 			<td>{cashier.name}</td>
 			<td>
 				{new Intl.DateTimeFormat("ar-EG", {

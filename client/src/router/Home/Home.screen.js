@@ -87,12 +87,17 @@ const Home = () => {
             await create({
               servicesIds: servicesActiveIds,
               employeeId: employeeActiveId,
+			  extraServiceDescription: editedName,
+			  extraServiceAmount: editedPrice
             })
           ) {
             setServicesActiveIds([]);
             setEmployeeActiveId(null);
+			setEditedName("");
+			setEditedPrice(0);
             setVisible(false);
           }
+		  console.log(editedName)
         }}
       />
     </div>
