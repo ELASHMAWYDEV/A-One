@@ -25,6 +25,7 @@ const useHome = () => {
   };
 
   const create = async ({servicesIds, employeeId, extraServiceDescription, extraServiceAmount}) => {
+    setIsLoading(true);
     try {
       console.log(servicesIds, employeeId)
       if (!servicesIds) {
@@ -41,7 +42,6 @@ const useHome = () => {
         extraServiceAmount
       });
 
-      setIsLoading(true);
 
       console.log(response);
 
